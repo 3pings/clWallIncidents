@@ -10,6 +10,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"log"
 	"log/syslog"
+	"os"
 )
 
 type incidentData struct {
@@ -24,7 +25,7 @@ func main() {
 
 	//loc := "41.346847,2.143373,41.45781,2.175545"
 	loc := "32.553,-116.936,32.982,-117.254"
-	authKey := "AuqW9LUO744wxmr6ik0PiJYAGbtKqmelkReiUT5_jhP4Dgh4cwDH-m9vE5wLY2z3"
+	authKey := os.Getenv("bing_maps_api_key")
 
 	logwriter, e := syslog.New(syslog.LOG_NOTICE, "incident")
 	if e == nil {
