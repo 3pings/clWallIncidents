@@ -61,7 +61,7 @@ func insertData(s *sql.DB, i incidentData) error {
 
 	_, err := s.Exec("INSERT incidents(Severity, Incident_ID, Coordinates, Description, End) VALUES(?,?,?,?,?)", i.Severity, i.IncidentID, i.Coordinates, i.Description, i.End)
 	log.Print("Successfully created DB record for incident info")
-
+	defer s.Close()
 	return err
 
 }
