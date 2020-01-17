@@ -45,6 +45,7 @@ type resourceSets []struct {
 }
 
 func GetIncident(location, key string) (r core) {
+
 	//Set Variables
 	var i core
 	baseUrl := "http://dev.virtualearth.net/REST/v1/Traffic/Incidents/"
