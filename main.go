@@ -24,7 +24,6 @@ type incidentData struct {
 
 func main() {
 
-	//loc := "41.346847,2.143373,41.45781,2.175545"
 	loc := "32.553,-116.936,32.982,-117.254"
 	authKey := os.Getenv("bing_maps_api_key")
 
@@ -56,8 +55,6 @@ func main() {
 
 }
 
-//noinspection ALL
-//noinspection ALL
 func insertData(s *sql.DB, i incidentData) error {
 
 	//Insert Data into Database
